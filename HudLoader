@@ -1,3 +1,5 @@
+-- Instances:
+
 local DemonWare = Instance.new("ScreenGui")
 local Hud = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -29,6 +31,7 @@ Hud.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Hud.BorderColor3 = Color3.fromRGB(40, 40, 40)
 Hud.Position = UDim2.new(0.012804877, 0, 0.604738116, 0)
 Hud.Size = UDim2.new(0, 549, 0, 294)
+Hud.Draggable = true;
 
 UICorner.Parent = Hud
 
