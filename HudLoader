@@ -22,6 +22,7 @@ local UICorner_4 = Instance.new("UICorner")
 DemonWare.Name = "DemonWare"
 DemonWare.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 DemonWare.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+DemonWare.ResetOnSpawn = false
 
 Hud.Name = "Hud"
 Hud.Parent = DemonWare
@@ -29,6 +30,7 @@ Hud.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Hud.BorderColor3 = Color3.fromRGB(40, 40, 40)
 Hud.Position = UDim2.new(0.012804877, 0, 0.604738116, 0)
 Hud.Size = UDim2.new(0, 549, 0, 294)
+Hud.Active = true
 Hud.Draggable = true
 
 UICorner.Parent = Hud
