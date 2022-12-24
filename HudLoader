@@ -1,20 +1,17 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local DemonWare = Instance.new("ScreenGui")
 local Hud = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
 local Discord = Instance.new("TextLabel")
+local vpn_lock = Instance.new("ImageButton")
+local verified_user = Instance.new("ImageButton")
 local InfoFrame = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local InfoTitle = Instance.new("TextLabel")
 local InfoBody = Instance.new("TextLabel")
-local Warning = Instance.new("TextLabel")
-local CautionSign = Instance.new("ImageButton")
-local ScrollFrame = Instance.new("ScrollingFrame")
+local WarningTitle = Instance.new("TextLabel")
+local WarningBody = Instance.new("TextLabel")
+local Scroll = Instance.new("ScrollingFrame")
 local InfYield = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local WSBypass = Instance.new("TextButton")
@@ -28,42 +25,62 @@ DemonWare.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Hud.Name = "Hud"
 Hud.Parent = DemonWare
-Hud.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Hud.Position = UDim2.new(0.0164634138, 0, 0.648379028, 0)
-Hud.Size = UDim2.new(0, 611, 0, 252)
+Hud.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Hud.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Hud.Position = UDim2.new(0.012804877, 0, 0.604738116, 0)
+Hud.Size = UDim2.new(0, 549, 0, 294)
 
 UICorner.Parent = Hud
 
-TextLabel.Parent = Hud
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(-0.0556464791, 0, -0.0436507948, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.Unknown
-TextLabel.Text = "DEMON WARE"
-TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
-TextLabel.TextSize = 23.000
-TextLabel.TextStrokeTransparency = 0.000
+Title.Name = "Title"
+Title.Parent = Hud
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(-0.0510018207, 0, -0.0408163257, 0)
+Title.Size = UDim2.new(0, 200, 0, 50)
+Title.Font = Enum.Font.RobotoMono
+Title.Text = "DEMON WARE"
+Title.TextColor3 = Color3.fromRGB(255, 0, 0)
+Title.TextSize = 27.000
 
 Discord.Name = "Discord"
 Discord.Parent = Hud
 Discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Discord.BackgroundTransparency = 1.000
-Discord.Position = UDim2.new(0.728314281, 0, -0.0436507948, 0)
-Discord.Size = UDim2.new(0, 182, 0, 50)
-Discord.Font = Enum.Font.Unknown
+Discord.Position = UDim2.new(-0.0965390876, 0, 0.0204081647, 0)
+Discord.Size = UDim2.new(0, 200, 0, 50)
+Discord.Font = Enum.Font.Code
 Discord.Text = "MrMan#0466"
 Discord.TextColor3 = Color3.fromRGB(255, 0, 0)
-Discord.TextSize = 23.000
-Discord.TextStrokeTransparency = 0.000
+Discord.TextSize = 16.000
+
+vpn_lock.Name = "vpn_lock"
+vpn_lock.Parent = Hud
+vpn_lock.BackgroundTransparency = 1.000
+vpn_lock.Position = UDim2.new(0.942501903, 0, 0.0204081628, 0)
+vpn_lock.Size = UDim2.new(0, 25, 0, 24)
+vpn_lock.ZIndex = 2
+vpn_lock.Image = "rbxassetid://3926307971"
+vpn_lock.ImageRectOffset = Vector2.new(404, 284)
+vpn_lock.ImageRectSize = Vector2.new(36, 36)
+
+verified_user.Name = "verified_user"
+verified_user.Parent = Hud
+verified_user.BackgroundTransparency = 1.000
+verified_user.LayoutOrder = 12
+verified_user.Position = UDim2.new(0.88433516, 0, 0.0204081535, 0)
+verified_user.Size = UDim2.new(0, 25, 0, 25)
+verified_user.ZIndex = 2
+verified_user.Image = "rbxassetid://3926305904"
+verified_user.ImageRectOffset = Vector2.new(324, 524)
+verified_user.ImageRectSize = Vector2.new(36, 36)
 
 InfoFrame.Name = "InfoFrame"
 InfoFrame.Parent = Hud
-InfoFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-InfoFrame.BackgroundTransparency = 0.150
-InfoFrame.BorderColor3 = Color3.fromRGB(30, 3, 30)
-InfoFrame.Position = UDim2.new(0.76317513, 0, 0.0974646807, 0)
-InfoFrame.Size = UDim2.new(0, 139, 0, 219)
+InfoFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+InfoFrame.BorderColor3 = Color3.fromRGB(44, 44, 44)
+InfoFrame.Position = UDim2.new(0.805100203, 0, 0.129251704, 0)
+InfoFrame.Size = UDim2.new(0, 100, 0, 243)
 
 UICorner_2.Parent = InfoFrame
 
@@ -71,8 +88,8 @@ InfoTitle.Name = "InfoTitle"
 InfoTitle.Parent = InfoFrame
 InfoTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InfoTitle.BackgroundTransparency = 1.000
-InfoTitle.Position = UDim2.new(-0.275035828, 0, -0.0639269426, 0)
-InfoTitle.Size = UDim2.new(0, 220, 0, 50)
+InfoTitle.Position = UDim2.new(0.25999999, 0, -0.0576131679, 0)
+InfoTitle.Size = UDim2.new(0, 56, 0, 50)
 InfoTitle.Font = Enum.Font.SourceSans
 InfoTitle.Text = "DEMON WARE"
 InfoTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -83,72 +100,73 @@ InfoBody.Name = "InfoBody"
 InfoBody.Parent = InfoFrame
 InfoBody.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InfoBody.BackgroundTransparency = 1.000
-InfoBody.Position = UDim2.new(0.0664747506, 0, 0.105022833, 0)
-InfoBody.Size = UDim2.new(0, 120, 0, 172)
+InfoBody.Position = UDim2.new(0.0799999982, 0, 0.0740740746, 0)
+InfoBody.Size = UDim2.new(0, 93, 0, 138)
 InfoBody.Font = Enum.Font.SourceSans
-InfoBody.Text = "This is a exploit GUI work in progress, mainly created for SL2, etc. this is a private script as this can be only used if shared by the creator (MrMan#0466).\\n"
+InfoBody.Text = "Demon Ware is a UI/Exploit mainly designed for SL2. As for now, the script is private. If you're caught leaking/tampering with the script, you will be blacklisted from the script."
 InfoBody.TextColor3 = Color3.fromRGB(255, 255, 255)
 InfoBody.TextScaled = true
-InfoBody.TextSize = 12.000
+InfoBody.TextSize = 14.000
 InfoBody.TextStrokeTransparency = 0.000
 InfoBody.TextWrapped = true
 
-Warning.Name = "Warning"
-Warning.Parent = InfoFrame
-Warning.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Warning.BackgroundTransparency = 1.000
-Warning.Position = UDim2.new(0.0808632374, 0, 0.858447492, 0)
-Warning.Size = UDim2.new(0, 120, 0, 38)
-Warning.Font = Enum.Font.SourceSans
-Warning.Text = "!! DO NOT LEAK !!"
-Warning.TextColor3 = Color3.fromRGB(255, 0, 0)
-Warning.TextSize = 16.000
-Warning.TextStrokeTransparency = 0.000
-Warning.TextWrapped = true
+WarningTitle.Name = "WarningTitle"
+WarningTitle.Parent = InfoFrame
+WarningTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WarningTitle.BackgroundTransparency = 1.000
+WarningTitle.Position = UDim2.new(0.140000001, 0, 0.588477373, 0)
+WarningTitle.Size = UDim2.new(0, 68, 0, 50)
+WarningTitle.Font = Enum.Font.SourceSans
+WarningTitle.Text = "WARNING"
+WarningTitle.TextColor3 = Color3.fromRGB(255, 0, 0)
+WarningTitle.TextSize = 14.000
+WarningTitle.TextStrokeTransparency = 0.000
 
-CautionSign.Name = "CautionSign"
-CautionSign.Parent = InfoFrame
-CautionSign.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CautionSign.BackgroundTransparency = 1.000
-CautionSign.Position = UDim2.new(0.41366908, 0, 0.810502291, 0)
-CautionSign.Size = UDim2.new(0, 23, 0, 17)
-CautionSign.ZIndex = 2
-CautionSign.Image = "rbxassetid://3926307971"
-CautionSign.ImageColor3 = Color3.fromRGB(255, 0, 0)
-CautionSign.ImageRectOffset = Vector2.new(644, 484)
-CautionSign.ImageRectSize = Vector2.new(36, 36)
+WarningBody.Name = "WarningBody"
+WarningBody.Parent = InfoFrame
+WarningBody.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WarningBody.BackgroundTransparency = 1.000
+WarningBody.Position = UDim2.new(0.0800000057, 0, 0.757201612, 0)
+WarningBody.Size = UDim2.new(0, 85, 0, 33)
+WarningBody.Font = Enum.Font.SourceSans
+WarningBody.Text = "!! DO NOT LEAK THE SCRIPT !!"
+WarningBody.TextColor3 = Color3.fromRGB(255, 0, 0)
+WarningBody.TextScaled = true
+WarningBody.TextSize = 12.000
+WarningBody.TextStrokeTransparency = 0.000
+WarningBody.TextWrapped = true
 
-ScrollFrame.Name = "ScrollFrame"
-ScrollFrame.Parent = DemonWare
-ScrollFrame.Active = true
-ScrollFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScrollFrame.BackgroundTransparency = 1.000
-ScrollFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ScrollFrame.Position = UDim2.new(0.0213414636, 0, 0.680797994, 0)
-ScrollFrame.Size = UDim2.new(0, 458, 0, 219)
+Scroll.Name = "Scroll"
+Scroll.Parent = Hud
+Scroll.Active = true
+Scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scroll.BackgroundTransparency = 0.950
+Scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Scroll.Position = UDim2.new(0.0236794166, 0, 0.159863949, 0)
+Scroll.Size = UDim2.new(0, 422, 0, 227)
 
 InfYield.Name = "InfYield"
-InfYield.Parent = ScrollFrame
+InfYield.Parent = Scroll
 InfYield.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 InfYield.BackgroundTransparency = 0.800
-InfYield.Position = UDim2.new(0.0195321646, 0, 0.00795229524, 0)
+InfYield.Position = UDim2.new(0.0292428341, 0, 0.0147550162, 0)
 InfYield.Size = UDim2.new(0, 112, 0, 34)
 InfYield.Font = Enum.Font.SourceSans
 InfYield.Text = "Infinite Yield"
 InfYield.TextColor3 = Color3.fromRGB(255, 255, 255)
 InfYield.TextSize = 18.000
 InfYield.TextStrokeTransparency = 0.000
-InfYield.MouseButton1Down:connect(function()
+InfYield.MouseButton1Down:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
 UICorner_3.Parent = InfYield
 
 WSBypass.Name = "WSBypass"
-WSBypass.Parent = ScrollFrame
+WSBypass.Parent = Scroll
 WSBypass.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 WSBypass.BackgroundTransparency = 0.800
-WSBypass.Position = UDim2.new(0.299532175, 0, 0.00795229524, 0)
+WSBypass.Position = UDim2.new(0.31611985, 0, 0.0147550162, 0)
 WSBypass.Size = UDim2.new(0, 112, 0, 34)
 WSBypass.Font = Enum.Font.SourceSans
 WSBypass.Text = "WalkSpeed Bypass"
